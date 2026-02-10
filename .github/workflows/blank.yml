@@ -10,7 +10,7 @@ jobs:
       - name: Login to Alibaba Cloud Registry
         run: |
           # 注意替换成你自己的阿里云仓库地域（如 cn-hangzhou）
-          echo "${{ secrets.ALIBABA_PASSWORD }}" | docker login registry.cn-hangzhou.aliyuncs.com --username ${{ secrets.ALIBABA_USERNAME }} --password-stdin
+          echo "${{ secrets.ALIBABA_PASSWORD }}" | docker login crpi-c44zpvyb2pw4rfbd.cn-zhangjiakou.personal.cr.aliyuncs.com/mytritonserver/triton --username ${{ secrets.ALIBABA_USERNAME }} --password-stdin
 
       - name: Pull and Push Image
         run: |
@@ -18,7 +18,7 @@ jobs:
           docker pull nvcr.io/nvidia/tritonserver:24.01-py3
           
           # 2. 打标签 (替换成你自己的阿里云仓库地址)
-          docker tag nvcr.io/nvidia/tritonserver:24.01-py3 registry.cn-hangzhou.aliyuncs.com/my_triton_space/triton:24.01-py3
+          docker tag nvcr.io/nvidia/tritonserver:24.01-py3 crpi-c44zpvyb2pw4rfbd.cn-zhangjiakou.personal.cr.aliyuncs.com/mytritonserver/triton:24.01-py3
           
           # 3. 推送到阿里云
-          docker push registry.cn-hangzhou.aliyuncs.com/my_triton_space/triton:24.01-py3
+          docker push crpi-c44zpvyb2pw4rfbd.cn-zhangjiakou.personal.cr.aliyuncs.com/mytritonserver/triton:24.01-py3
