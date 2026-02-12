@@ -15,10 +15,10 @@ jobs:
       - name: Pull and Push Image
         run: |
           # 1. 从 NVIDIA 拉取
-          docker pull nvcr.io/nvidia/tritonserver:24.01-py3
+          docker pull nvcr.io/nvidia/tritonserver:25.06-trtllm-python-py3
           
           # 2. 打标签 (替换成你自己的阿里云仓库地址)
-          docker tag nvcr.io/nvidia/tritonserver:24.01-py3 crpi-c44zpvyb2pw4rfbd.cn-zhangjiakou.personal.cr.aliyuncs.com/mytritonserver/triton:24.01-py3
+          docker tag nvcr.io/nvidia/tritonserver:25.06-trtllm-python-py3 crpi-c44zpvyb2pw4rfbd.cn-zhangjiakou.personal.cr.aliyuncs.com/mytritonserver/tritonserver:25.06-trtllm-python-py3
           
           # 3. 推送到阿里云
-          docker push crpi-c44zpvyb2pw4rfbd.cn-zhangjiakou.personal.cr.aliyuncs.com/mytritonserver/triton:24.01-py3
+          docker push crpi-c44zpvyb2pw4rfbd.cn-zhangjiakou.personal.cr.aliyuncs.com/mytritonserver/tritonserver:25.06-trtllm-python-py3
